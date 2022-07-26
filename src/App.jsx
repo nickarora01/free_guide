@@ -75,8 +75,7 @@ const App =()=> {
             <div className="container">
             
                 <div className="row">
-               {/* {
-          users.map((item,{i})=> */}
+             
           { users.map((item,{i},users)=>
                     <div className="card" >
                         <img src={item.img}className="card-img-top" alt="Mask-Group-1"/>
@@ -184,8 +183,7 @@ const App =()=> {
             <div className="container">
             
                 <div className="row">
-               {/* {
-          users.map((item,{i})=> */}
+            
           { users.map((item,{i},users)=>
                     <div className="card" >
                         <img src={item.img}className="card-img-top" alt="Mask-Group-1"/>
