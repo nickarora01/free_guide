@@ -1,9 +1,22 @@
-import React from'react';
+import React,{useState,useEffect} from'react';
 import '../src/style.css'
-import { useState } from "react";
 import Multiselect from "multiselect-react-dropdown";
 
 const App =()=> {
+  const [data,setData] = useState([])
+  const [users,setUser]=useState([])
+  useEffect(()=>{
+    fetchComments()
+  },[])
+  const fetchComments =()=>{
+    fetch("./Data.json").then((result)=>{
+      result.json().then((resp)=>{
+        console.warn(resp)
+        setUser(resp.Data)
+      })
+    })
+  }
+  
   const [tags, setTags] = useState(["Crafts", "Architecture"]);
   const [category, setCategory] = useState(["Nature", "Culinary"]);
   const [lang, setLang] = useState(["English"]);
@@ -44,13 +57,13 @@ const App =()=> {
             </div>
         </section>
 
-        <section class="experience_section mb-5">
-        <div class="container">
-            <div class="experience_outer">
-                <div class="experience_inner1">
+        <section className="experience_section mb-5">
+        <div className="container">
+            <div className="experience_outer">
+                <div className="experience_inner1">
                     <h3>Trending Experiences</h3>
                 </div>
-                <div class="experience_inner1">
+                <div className="experience_inner1">
                    <a href="#">See More </a>
                 </div>
 
@@ -58,71 +71,41 @@ const App =()=> {
 
         </div>
     </section>
-        <section class="cards-section mb-5">
-            <div class="container">
-                <div class="row">
-                    <div class="card" >
-                        <img src={require('../src/images/Mask-Group-1.png')}class="card-img-top" alt="Mask-Group-1"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Historical Tour Of The Rocks</h5>
-                            <p class="card-text">Explore Sydney's beautiful coastline whilst leaning about the first settlements in Australia</p>
-                            <a href="#" class="card-link">4.3 <span>Rating</span></a>
-                            <a href="#" class="card-link"><img src={require('../src/images/restaurant.jpg')}/><span>CULINARY</span> </a>
+        <section className="cards-section mb-5">
+            <div className="container">
+            
+                <div className="row">
+               {/* {
+          users.map((item,{i})=> */}
+          { users.map((item,{i},users)=>
+                    <div className="card" >
+                        <img src={item.img}className="card-img-top" alt="Mask-Group-1"/>
+                        <div className="card-body">
+                            <h5 className="card-title">{item.Heading}</h5>
+                            <p className="card-text">{item.sub}</p>
+                            <a href="#" className="card-link">4.3 <span>Rating</span></a>
+                            <a href="#" className="card-link"><img src={require('../src/images/restaurant.jpg')}/><span>CULINARY</span> </a>
                           </div>
                       </div>
-                      <div class="card" >
-                        <img src={require('../src/images/Mask-Group-1-1.png')}class="card-img-top" alt="Mask-Group-1"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Historical Tour Of The Rocks</h5>
-                            <p class="card-text">Explore Sydney's beautiful coastline whilst leaning about the first settlements in Australia</p>
-                            <a href="#" class="card-link">4.3 <span>Rating</span></a>
-                            <a href="#" class="card-link"><img src={require('../src/images/restaurant.jpg')}/><span>CULINARY</span> </a>
-                          </div>
-                      </div>
-                      <div class="card" >
-                        <img src={require('../src/images/Mask-Group-1-2.png')} class="card-img-top" alt="Mask-Group-1"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Historical Tour Of The Rocks</h5>
-                            <p class="card-text">Explore Sydney's beautiful coastline whilst leaning about the first settlements in Australia</p>
-                            <a href="#" class="card-link">4.3 <span>Rating</span></a>
-                            <a href="#" class="card-link"><img src={require('../src/images/restaurant.jpg')}/><span>CULINARY</span> </a>
-                          </div>
-                      </div>
-                      <div class="card" >
-                        <img src={require('../src/images/Mask-Group-1-3.jpg')} class="card-img-top" alt="Mask-Group-1"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Historical Tour Of The Rocks</h5>
-                            <p class="card-text">Explore Sydney's beautiful coastline whilst leaning about the first settlements in Australia</p>
-                            <a href="#" class="card-link">4.3 <span>Rating</span></a>
-                            <a href="#" class="card-link"><img src={require('../src/images/restaurant.jpg')}/><span>CULINARY</span> </a>
-                          </div>
-                      </div>
-                      <div class="card" >
-                        <img src={require('../src/images/Mask-Group-1-4.jpg')} class="card-img-top" alt="Mask-Group-1"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Historical Tour Of The Rocks</h5>
-                            <p class="card-text">Explore Sydney's beautiful coastline whilst leaning about the first settlements in Australia</p>
-                            <a href="#" class="card-link">4.3 <span>Rating</span></a>
-                            <a href="#" class="card-link"><img src={require('../src/images/restaurant.jpg')}/><span>CULINARY</span> </a>
-                          </div>
-                      </div>
+          )}
                 </div>
+        
             </div>
         </section>
-        <section class="experience_section mb-5">
-        <div class="container">
-            <div class="experience_outer">
-                <div class="experience_inner1">
+        <section className="experience_section mb-5">
+        <div className="container">
+            <div className="experience_outer">
+                <div className="experience_inner1">
                     <h3>Experiences Near You</h3>
                 </div>
-                <div class="experience_inner1">
+                <div className="experience_inner1">
                     <ul>
                         <li><a href="#">Price</a></li>
                         <li><a href="#">Rating</a> </li>
                         <li><a href="#">Distance</a></li>
                         <li><a href="#">Likes</a></li>
                         <li><a href="#">Creation Date</a></li>
-                        <li><a href="#" class="hide_filter"><img src={require('../src/images/filter_icon.png')} /> Hide Filter</a></li>
+                        <li><a href="#" className="hide_filter"><img src={require('../src/images/filter_icon.png')} /> Hide Filter</a></li>
                     </ul>
                 </div>
 
@@ -197,101 +180,25 @@ const App =()=> {
 
         </div>
     </section>
-      <  section class="cards-section mb-5">
-            <div class="container">
-                <div class="row">
-                    <div class="card" >
-                        <img src={require('../src/images/Mask-Group-1.png')}class="card-img-top" alt="Mask-Group-1"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Historical Tour Of The Rocks</h5>
-                            <p class="card-text">Explore Sydney's beautiful coastline whilst leaning about the first settlements in Australia</p>
-                            <a href="#" class="card-link">4.3 <span>Rating</span></a>
-                            <a href="#" class="card-link"><img src={require('../src/images/restaurant.jpg')}/><span>CULINARY</span> </a>
+    <section className="cards-section mb-5">
+            <div className="container">
+            
+                <div className="row">
+               {/* {
+          users.map((item,{i})=> */}
+          { users.map((item,{i},users)=>
+                    <div className="card" >
+                        <img src={item.img}className="card-img-top" alt="Mask-Group-1"/>
+                        <div className="card-body">
+                            <h5 className="card-title">{item.Heading}</h5>
+                            <p className="card-text">{item.sub}</p>
+                            <a href="#" className="card-link">4.3 <span>Rating</span></a>
+                            <a href="#" className="card-link"><img src={item.img}/><span>CULINARY</span> </a>
                           </div>
                       </div>
-                      <div class="card" >
-                        <img src={require('../src/images/Mask-Group-1-1.png')}class="card-img-top" alt="Mask-Group-1"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Historical Tour Of The Rocks</h5>
-                            <p class="card-text">Explore Sydney's beautiful coastline whilst leaning about the first settlements in Australia</p>
-                            <a href="#" class="card-link">4.3 <span>Rating</span></a>
-                            <a href="#" class="card-link"><img src={require('../src/images/restaurant.jpg')}/><span>CULINARY</span> </a>
-                          </div>
-                      </div>
-                      <div class="card" >
-                        <img src={require('../src/images/Mask-Group-1-2.png')} class="card-img-top" alt="Mask-Group-1"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Historical Tour Of The Rocks</h5>
-                            <p class="card-text">Explore Sydney's beautiful coastline whilst leaning about the first settlements in Australia</p>
-                            <a href="#" class="card-link">4.3 <span>Rating</span></a>
-                            <a href="#" class="card-link"><img src={require('../src/images/restaurant.jpg')}/><span>CULINARY</span> </a>
-                          </div>
-                      </div>
-                      <div class="card" >
-                        <img src={require('../src/images/Mask-Group-1-3.jpg')} class="card-img-top" alt="Mask-Group-1"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Historical Tour Of The Rocks</h5>
-                            <p class="card-text">Explore Sydney's beautiful coastline whilst leaning about the first settlements in Australia</p>
-                            <a href="#" class="card-link">4.3 <span>Rating</span></a>
-                            <a href="#" class="card-link"><img src={require('../src/images/restaurant.jpg')}/><span>CULINARY</span> </a>
-                          </div>
-                      </div>
-                      <div class="card" >
-                        <img src={require('../src/images/Mask-Group-1-4.jpg')} class="card-img-top" alt="Mask-Group-1"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Historical Tour Of The Rocks</h5>
-                            <p class="card-text">Explore Sydney's beautiful coastline whilst leaning about the first settlements in Australia</p>
-                            <a href="#" class="card-link">4.3 <span>Rating</span></a>
-                            <a href="#" class="card-link"><img src={require('../src/images/restaurant.jpg')}/><span>CULINARY</span> </a>
-                          </div>
-                      </div>
-                      <div class="card" >
-                        <img src={require('../src/images/Mask-Group-1.png')}class="card-img-top" alt="Mask-Group-1"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Historical Tour Of The Rocks</h5>
-                            <p class="card-text">Explore Sydney's beautiful coastline whilst leaning about the first settlements in Australia</p>
-                            <a href="#" class="card-link">4.3 <span>Rating</span></a>
-                            <a href="#" class="card-link"><img src={require('../src/images/restaurant.jpg')}/><span>CULINARY</span> </a>
-                          </div>
-                      </div>
-                      <div class="card" >
-                        <img src={require('../src/images/Mask-Group-1-1.png')}class="card-img-top" alt="Mask-Group-1"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Historical Tour Of The Rocks</h5>
-                            <p class="card-text">Explore Sydney's beautiful coastline whilst leaning about the first settlements in Australia</p>
-                            <a href="#" class="card-link">4.3 <span>Rating</span></a>
-                            <a href="#" class="card-link"><img src={require('../src/images/restaurant.jpg')}/><span>CULINARY</span> </a>
-                          </div>
-                      </div>
-                      <div class="card" >
-                        <img src={require('../src/images/Mask-Group-1-2.png')} class="card-img-top" alt="Mask-Group-1"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Historical Tour Of The Rocks</h5>
-                            <p class="card-text">Explore Sydney's beautiful coastline whilst leaning about the first settlements in Australia</p>
-                            <a href="#" class="card-link">4.3 <span>Rating</span></a>
-                            <a href="#" class="card-link"><img src={require('../src/images/restaurant.jpg')}/><span>CULINARY</span> </a>
-                          </div>
-                      </div>
-                      <div class="card" >
-                        <img src={require('../src/images/Mask-Group-1-3.jpg')} class="card-img-top" alt="Mask-Group-1"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Historical Tour Of The Rocks</h5>
-                            <p class="card-text">Explore Sydney's beautiful coastline whilst leaning about the first settlements in Australia</p>
-                            <a href="#" class="card-link">4.3 <span>Rating</span></a>
-                            <a href="#" class="card-link"><img src={require('../src/images/restaurant.jpg')}/><span>CULINARY</span> </a>
-                          </div>
-                      </div>
-                      <div class="card" >
-                        <img src={require('../src/images/Mask-Group-1-4.jpg')} class="card-img-top" alt="Mask-Group-1"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Historical Tour Of The Rocks</h5>
-                            <p class="card-text">Explore Sydney's beautiful coastline whilst leaning about the first settlements in Australia</p>
-                            <a href="#" class="card-link">4.3 <span>Rating</span></a>
-                            <a href="#" class="card-link"><img src={require('../src/images/restaurant.jpg')}/><span>CULINARY</span> </a>
-                          </div>
-                      </div>
-
+          )}
                 </div>
+        
             </div>
         </section>
         <footer>
