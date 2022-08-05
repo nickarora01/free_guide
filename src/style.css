@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
 
 .hero-section {
-    background-image: url("../src/images/image-2.png");
+    background-image: url("./images/image-2.png");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -376,7 +376,7 @@ img.boimg {
     }
     ul.red li::before{
      content: "";
-     background: url('../src/images/check-box.png');
+     background: url('./images/check-box.png');
      height: 24px;
      width: 24px;
      position: absolute;
@@ -466,3 +466,150 @@ img.boimg {
         line-height: 20px;
         color: #000000;
     }
+    
+img.boimg {
+    margin-left: -20px;
+}
+.book_profile{
+color: #868E9B;
+text-decoration: none;
+}
+.book-imag {
+    margin-bottom: 28px;
+    margin-top: 20px;
+}
+
+a.site_btn.blue_btn {
+    background: #1F8FFF;
+    border-color: #1F8FFF;
+    color: white !important;
+}
+a.site_btn.blue_btn img {
+    margin-right: 7px;
+    text-align: center;
+    object-fit: contain;
+    width: 18px;
+    height: 18px;
+}
+.book-imag_link p span {
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+.book-imag_link {
+    margin-top: 20px;
+    width: 100%;
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+/* <!-- third section --> */
+.first{
+    padding:20px;
+    margin:10px;
+}
+.first h2{
+    font-weight:600;
+    font-size:35px;
+    line-height: 43.75px;
+    padding-bottom:20px;
+}
+.first ul li{
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 30px;
+    color: #000000;
+    list-style-type:none;
+    position: relative;
+    padding-left: 34px;
+}
+ul.green{
+    padding-left: 0rem;
+}
+ul.green li::before{
+    content: "";
+    background: url('./images/akar-icons.png');
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+ul.blue{
+    padding-left: 0rem;
+    
+}
+ul.blue li::before{
+    content: "";
+    background: url('./images/Group.png');
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    margin-top: 5px;
+}
+ul.red{
+    padding-left: 0rem;
+}
+ul.red li::before{
+    content: "";
+    background: url('./images/check-box.png');
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    margin-top: 6px !important;
+}
+.questio{
+    padding:20px;
+    margin:10px;
+    width: 951px;
+    height: 554px;
+    top:3221px;
+    margin-bottom: 30px;   
+}
+
+.questio h3{
+    display:flex; 
+    top: 3221px;
+    font-weight:600;
+    font-size:35px;
+    line-height: 43.75px;
+    padding-bottom:30px;
+    padding-top: 30px;
+    margin-top: 40px;
+    
+}
+spam.eng{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: capitalize;
+    color: #868E9B;
+    width: 78px;
+}
+.questio hr{
+    height: 0px;
+    border: 0.5px solid #B0B9C8;
+    margin-bottom: 25px;
+}
+.questio p{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+}
+spam.hint{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    float: right;
+    color: #000000;
+}

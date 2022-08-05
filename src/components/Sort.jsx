@@ -63,7 +63,54 @@ const Sorting=()=>{
       </div>
     </div>
   </section>
-               <section className="experience_section mb-5">
+           
+    <section>
+    <div class="container">
+      <div class="row">
+        <div class="questio">
+          <h3>Questions</h3>
+          <div class="Rate_users_profile">
+            <h6><img src={require('../images/James-T.png')} alt="image"/>&nbsp;<b>James T</b>
+              <spam class="eng"> 12 sep,2021</spam>
+              <spam class="hint">6 upvotes</spam>
+            </h6>
+            <p> <b>Are there any near by taril i can trek </b></p>
+          </div>
+
+          <div class="Rate_users_profile">
+            <h6><img src={require('../images/Ellipse3.png')} alt="image" width="30px;" height="30px;"/>&nbsp;<b>Daniel W</b>&nbsp; <spam
+                class="eng"> 12 sep,2021</spam>
+            </h6>
+            <p> Yes there is a ridge-oak taril that's 2 miles from this tour</p>
+          </div>
+          <hr/>
+          <div class="Rate_users_profile">
+            <h6><img src={require('../images/Carolyn-p.png')} alt="image"/>&nbsp;<b>Carolyn P</b>&nbsp; <spam class="eng"> 12 sep,2021
+              </spam>
+              <spam class="hint">1 upvotes</spam>
+            </h6>
+            <p><b> Would you mind adding a rest stop somewher in the middle? Some older folks got quiet tried during
+                your
+                joureny</b></p>
+          </div>
+
+          <div class="Rate_users_profile">
+            <h6><img src={require('../images/Ellipse3.png')} alt="image" width="30px;" height="30px;"/>&nbsp;<b>Daniel W</b>&nbsp; <spam
+                class="eng"> 12 sep,2021</spam>
+            </h6>
+            <p> Thank you for your feedback. I am always trying my best to create my best experiance for my fellow
+              travellers. I will surely
+              update the tour</p>
+          </div>
+
+          <hr/>
+          <div class="col-md-4"> <a href="#" class="site_btn">See More</a></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section className="experience_section mb-5">
         <div className="container">
             <div className="experience_outer">
                 <div className="experience_inner1">

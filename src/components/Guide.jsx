@@ -83,6 +83,35 @@ const Guide=()=>{
           
             </div>
           </div>
+          <section class="included_excluded_outer">
+  <div class="container">
+    <div class="first">
+        <div class="row">
+          <div class="col-md-4">
+           <h2>Included</h2>
+           <ul class="green"><li>7 days Nissan x-Trail SUV hire</li>
+              <li> Platypus Park Country Retreat(2 night)</li>
+              <li> Demescape in the vines (2 night)</li>
+              <li> Stanley seaview inn(2 night)</li>
+              <li>Kooparoon Niara Day Tour</li>
+              <li>Low Head Penguin Sunset Tour</li>
+              <li> wine tasting + bottle of wine</li>
+              <li> 4 breakfasts, 1 lunch</li></ul>
+              <ul class="blue"><li>A Tasmania print by luke Tscharke,to hang in your home.</li>
+              <li> An exclusive travel guide with ,photography tips, hikes and essential pit.</li></ul>
+          </div>
+          <div class="col-md-4">
+            <h2>Excluded</h2>
+            <ul class="red"><li> 7 days Nissan x-Trail SUV hire</li>
+          <li> Platypus Park Country Retreat(2 night)</li>
+          <li> Demescape in the vines (2 night)</li>
+          <li>Stanley seaview inn(2 night) </li>
+          <li> Kooparoon Niara Day Tour</li></ul>
+          </div>
+        </div>
+     </div>
+  </div>
+  </section>
             
              </>
     )
